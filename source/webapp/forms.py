@@ -9,3 +9,11 @@ class PollForm(forms.ModelForm):
         widgets = {
             'question': forms.TextInput(attrs={'class': 'myfieldclass'})
         }
+
+
+class ChoiceForm(forms.ModelForm):
+    class Meta:
+        model = Choice
+        fields = (
+            'answer',
+        )

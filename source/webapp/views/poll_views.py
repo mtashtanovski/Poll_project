@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
 from webapp.models import Poll, Choice
@@ -10,7 +10,7 @@ from webapp.forms import PollForm
 class IndexView(ListView):
     model = Poll
     context_object_name = 'polls'
-    template_name = 'index.html'
+    template_name = 'polls/index.html'
     paginate_by = 5
     paginate_orphans = 0
 
@@ -20,24 +20,25 @@ class IndexView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
-        print(context)
-
         return context
 
 
-class PollView(TemplateView):
+class PollView(DetailView):
+    template_name = 'polls/poll_view.html'
+    model = Poll
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        poll = get_object_or_404(Poll, pk=kwargs.get('pk'))
-        context['poll'] = poll
+        choices = self.object.choices.order_by('pk')
+        context['choices'] = choices
+        print(context)
         return context
 
 
 class PollCreate(CreateView):
     model = Poll
     form_class = PollForm
-    template_name = 'poll_create.html'
+    template_name = 'polls/poll_create.html'
 
     def get_success_url(self):
         return reverse('poll_view', kwargs={'pk': self.object.pk})
@@ -45,7 +46,7 @@ class PollCreate(CreateView):
 
 class PollEdit(UpdateView):
     form_class = PollForm
-    template_name = 'poll_edit.html'
+    template_name = 'polls/poll_edit.html'
     model = Poll
 
     def get_success_url(self):
@@ -54,5 +55,5 @@ class PollEdit(UpdateView):
 
 class PollDelete(DeleteView):
     model = Poll
-    template_name = 'poll_delete.html'
+    template_name = 'polls/poll_delete.html'
     success_url = reverse_lazy('index')
