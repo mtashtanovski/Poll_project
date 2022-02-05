@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Создать опрос</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h2>Опросник</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for poll in polls %}
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" style="text-decoration: none"><h5 class="card-title">{{ poll.question }}</h5></a>
+                            <p class="card-text">{{ poll.created }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if is_paginated %}
+                {% include 'partials/pagination.html' %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
