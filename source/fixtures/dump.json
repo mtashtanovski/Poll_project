@@ -1,0 +1,252 @@
+[
+{
+  "model": "webapp.poll",
+  "pk": 1,
+  "fields": {
+    "question": "Какой породы ваша собака?",
+    "created": "2022-02-05T08:03:03.062Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 2,
+  "fields": {
+    "question": "Какой язык программирования вы используете для создания веб приложений?",
+    "created": "2022-02-05T08:04:01.640Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 3,
+  "fields": {
+    "question": "Марка вашего автомобиля?",
+    "created": "2022-02-05T08:04:56.468Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 4,
+  "fields": {
+    "question": "Какая степень вашего образования?",
+    "created": "2022-02-05T08:05:47.244Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 5,
+  "fields": {
+    "question": "Сколько звезд на небе?",
+    "created": "2022-02-05T08:06:31.097Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 6,
+  "fields": {
+    "question": "Назовите имя и отчество выдающегося поэта Пушкина?",
+    "created": "2022-02-05T08:07:28.214Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 7,
+  "fields": {
+    "question": "Какой язык программирования чаще всего используется для создания игр?",
+    "created": "2022-02-05T08:08:33.476Z"
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 1,
+  "fields": {
+    "answer": "Немецкая овчарка",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 2,
+  "fields": {
+    "answer": "Американский стаффордширский т",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 3,
+  "fields": {
+    "answer": "Чихуахуа",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 4,
+  "fields": {
+    "answer": "Python",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 5,
+  "fields": {
+    "answer": "JAVA",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 6,
+  "fields": {
+    "answer": "JavaScript",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 7,
+  "fields": {
+    "answer": "Toyota",
+    "poll": 3
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 8,
+  "fields": {
+    "answer": "Mercedes Benz",
+    "poll": 3
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 9,
+  "fields": {
+    "answer": "Subaru",
+    "poll": 3
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 10,
+  "fields": {
+    "answer": "Средне-специальное",
+    "poll": 4
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 11,
+  "fields": {
+    "answer": "Высшее",
+    "poll": 4
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 12,
+  "fields": {
+    "answer": "Доктор наук",
+    "poll": 4
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 13,
+  "fields": {
+    "answer": "1 миллиард",
+    "poll": 5
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 14,
+  "fields": {
+    "answer": "Их нет на небе",
+    "poll": 5
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 15,
+  "fields": {
+    "answer": "999 триллионов",
+    "poll": 5
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 16,
+  "fields": {
+    "answer": "Сергей Алексеевич",
+    "poll": 6
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 17,
+  "fields": {
+    "answer": "Алексей Викторович",
+    "poll": 6
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 18,
+  "fields": {
+    "answer": "Александр Сергеевич",
+    "poll": 6
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 19,
+  "fields": {
+    "answer": "JAVA",
+    "poll": 7
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 20,
+  "fields": {
+    "answer": "C, C++",
+    "poll": 7
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 21,
+  "fields": {
+    "answer": "Python",
+    "poll": 7
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 22,
+  "fields": {
+    "answer": "JavaScript",
+    "poll": 7
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$SO8sANCOlymnESPsLmHbSF$dGqnSAxplvoM+zNupQ9bPQcFUpxKt1R88ojr/vChtSA=",
+    "last_login": "2022-02-05T07:28:01.794Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-02-05T07:27:51.418Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
