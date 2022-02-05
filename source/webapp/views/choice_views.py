@@ -19,20 +19,20 @@ class ChoiceAdd(CreateView):
         return redirect('poll_view', pk=poll.pk)
 
 
-# class CommentUpdateView(UpdateView):
-#     model = Comment
-#     template_name = 'comments/update.html'
-#     form_class = CommentForm
-#
-#     def get_success_url(self):
-#         return reverse("article_view", kwargs={"pk": self.object.article.pk})
-#
-#
-# class CommentDeleteView(DeleteView):
-#     model = Comment
-#
-#     def get(self, request, *args, **kwargs):
-#         return super().delete(request, *args, **kwargs)
-#
-#     def get_success_url(self):
-#         return reverse("article_view", kwargs={"pk": self.object.article.pk})
+class ChoiceEdit(UpdateView):
+    model = Choice
+    template_name = 'choices/choice_edit.html'
+    form_class = ChoiceForm
+
+    def get_success_url(self):
+        return reverse("poll_view", kwargs={"pk": self.object.poll.pk})
+
+
+class ChoiceDelete(DeleteView):
+    model = Choice
+
+    def get(self, request, *args, **kwargs):
+        return super().delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse("poll_view", kwargs={"pk": self.object.poll.pk})
