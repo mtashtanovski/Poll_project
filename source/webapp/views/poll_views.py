@@ -1,9 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
-
-# Create your views here.
-from webapp.models import Poll, Choice
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from webapp.models import Poll
 from webapp.forms import PollForm
 
 
@@ -11,6 +8,7 @@ class IndexView(ListView):
     model = Poll
     context_object_name = 'polls'
     template_name = 'polls/index.html'
+    ordering = '-created_at'
     paginate_by = 5
     paginate_orphans = 0
 
