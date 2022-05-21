@@ -8,7 +8,7 @@ class IndexView(ListView):
     model = Poll
     context_object_name = 'polls'
     template_name = 'polls/index.html'
-    ordering = '-created_at'
+    ordering = '-created'
     paginate_by = 5
     paginate_orphans = 0
 
@@ -28,7 +28,7 @@ class PollView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         choices = self.object.choices.order_by('pk')
-        context['choices'] = choices
+        context["choices"] = choices
         print(context)
         return context
 
